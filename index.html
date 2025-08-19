@@ -3,820 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bouquet Elegance - Buket Bunga, Snack, Uang & Boneka</title>
+    <title>BOMBOLONI</title>
+    <link rel="stylesheet" href="w.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Global Styles */
-        :root {
-            --primary: #e91e63;
-            --secondary: #9c27b0;
-            --light: #f8f9fa; 
-            --dark: #212529;
-            --success: #4caf50;
-            --warning: #ff9800;
-            --info: #2196f3;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #c2185b;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: var(--secondary);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: #7b1fa2;
-            transform: translateY(-2px);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-            font-size: 2.2rem;
-            color: var(--primary);
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            margin: 10px auto;
-            border-radius: 2px;
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
+        /* Additional CSS for price display */
+        .product-price-container {
             display: flex;
             align-items: center;
-        }
-
-        .logo i {
-            margin-right: 10px;
-            font-size: 2rem;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            font-weight: 600;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav ul li a:hover {
-            color: #ffeb3b;
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: #ffeb3b;
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background-color: #ffeb3b;
-            color: var(--dark);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            margin-top: 60px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        /* Products Section */
-        .products {
-            padding: 80px 0;
-        }
-
-        .product-filters {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
+            gap: 8px;
+            margin: 10px 0;
             flex-wrap: wrap;
-            gap: 10px;
         }
-
-        .filter-btn {
-            padding: 8px 20px;
-            border: 1px solid var(--primary);
-            border-radius: 30px;
-            background: transparent;
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9em;
+        }
+        .current-price {
             color: var(--primary);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .product-img {
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .product-card:hover .product-img img {
-            transform: scale(1.1);
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-category {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-        }
-
-        .product-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .product-desc {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            height: 60px;
-            overflow: hidden;
-        }
-
-        .product-materials {
-            font-size: 0.9rem;
-            color: #777;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .product-price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .product-actions {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background-color: white;
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-img {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background-color: #f9f9f9;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .contact-info {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .contact-icon {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-right: 15px;
-            margin-top: 3px;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #555;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-control:focus {
-            border-color: var(--primary);
-            outline: none;
-        }
-
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 50px 0 20px;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background-color: white;
-        }
-
-        .footer-col p {
-            margin-bottom: 15px;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-            list-style: none;
-        }
-
-        .footer-links a {
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #ffeb3b;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            overflow-y: auto;
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 50px auto;
-            max-width: 800px;
-            width: 90%;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-            animation: modalFadeIn 0.3s;
-        }
-
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .modal-header {
-            padding: 20px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .modal-header h2 {
-            font-size: 1.5rem;
-        }
-
-        .close-modal {
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .close-modal:hover {
-            transform: rotate(90deg);
-        }
-
-        .modal-body {
-            padding: 20px;
-        }
-
-        .cart-items {
-            margin-bottom: 20px;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .cart-item-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .cart-item-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .cart-item-details {
-            flex: 1;
-            padding: 0 15px;
-        }
-
-        .cart-item-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .cart-item-price {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .cart-item-quantity {
-            display: flex;
-            align-items: center;
-        }
-
-        .quantity-btn {
-            width: 30px;
-            height: 30px;
-            border: 1px solid #ddd;
-            background: #f9f9f9;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .quantity-input {
-            width: 50px;
-            height: 30px;
-            text-align: center;
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
-            border-left: none;
-            border-right: none;
-        }
-
-        .remove-item {
-            color: #f44336;
-            font-size: 1.2rem;
-            cursor: pointer;
-            margin-left: 15px;
-        }
-
-        .cart-summary {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .cart-actions {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Order Form Modal */
-        .order-form .form-group {
-            margin-bottom: 15px;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-img, .about-text {
-                flex: none;
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                padding: 0 15px;
-            }
-            
-            nav {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 80%;
-                height: calc(100vh - 70px);
-                background-color: var(--primary);
-                transition: left 0.3s;
-                z-index: 999;
-            }
-            
-            nav.active {
-                left: 0;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                padding: 20px;
-            }
-            
-            nav ul li {
-                margin: 15px 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .product-filters {
-                justify-content: flex-start;
-                overflow-x: auto;
-                padding-bottom: 10px;
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            .filter-btn {
-                white-space: nowrap;
-            }
-            
-            .cart-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .cart-item-details {
-                padding: 10px 0;
-            }
-            
-            .cart-item-quantity {
-                margin-top: 10px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                height: auto;
-                padding: 100px 0;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .modal-content {
-                width: 95%;
-                margin: 20px auto;
-            }
-            
-            .cart-actions {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .cart-actions .btn {
-                width: 100%;
-            }
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .discount-badge {
+            background: #ffeb3b;
+            color: #333;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header and other sections remain the same -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">
-                <i class="fas fa-gift"></i>
-                <span>Bouqettea</span>
+            <a href="p.png" class="logo">
+                <span>BOMBOLONI</span>
             </a>
             
             <nav id="main-nav">
@@ -824,6 +47,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Produk</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#testimonials">Testimoni</a></li>
                     <li><a href="#contact">Kontak</a></li>
                     <li>
                         <a href="#" class="cart-icon" id="cart-icon">
@@ -840,11 +64,10 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Buket Keren untuk Setiap Momen</h1>
-            <p>Temukan buket bunga, snack, uang, dan boneka terbaik untuk hadiah spesial Anda. Kualitas premium dengan harga terjangkau.</p>
+            <h1>MAU KENYANG TAPI PRAKTIS...</h1>
+            <p>Disini kita menjual donuts yang sangat enak dan murah meriah</p>
             <div class="hero-btns">
                 <a href="#products" class="btn btn-primary">Produk</a>
                 <a href="#contact" class="btn btn-secondary">Hubungi Kami</a>
@@ -852,47 +75,100 @@
         </div>
     </section>
 
-    <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
             <h2 class="section-title">Produk Kami</h2>
             
             <div class="product-filters">
                 <button class="filter-btn active" data-filter="all">Semua</button>
-                <button class="filter-btn" data-filter="bunga">Buket Bunga</button>
-                <button class="filter-btn" data-filter="snack">Buket Snack</button>
-                <button class="filter-btn" data-filter="uang">Buket Uang</button>
-                <button class="filter-btn" data-filter="boneka">Buket Boneka</button>
+                <button class="filter-btn" data-filter="DONUTS ORI">DONUTS ORI</button>
+                <button class="filter-btn" data-filter="DONUTS RASA">DONUTS RASA</button>
+                <button class="filter-btn" data-filter="paket">Paket</button>
             </div>
             
             <div class="product-grid" id="product-grid">
-                <!-- Products will be loaded here by JavaScript -->
+                <!-- Products will be displayed here by JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Other sections (testimonials, about, contact) remain the same -->
+   <section class="testimonials" id="testimonials">
+    <div class="container">
+        <h2 class="section-title">Testimoni Pelanggan</h2>
+        
+        <div class="testimonial-slider">
+            <!-- Testimoni 1 -->
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <img src="k.jpg" alt="Pelanggan 1" class="testimonial-avatar">
+                    <div class="testimonial-text">
+                        <p>"Donatnya lembut dan isiannya melimpah! Buat saya nagih dan saya sangat suka."</p>
+                        <div class="testimonial-author">
+                            <span class="testimonial-name">RAJWA</span>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimoni 2 -->
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <img src="f.jpg" alt="Pelanggan 2" class="testimonial-avatar">
+                    <div class="testimonial-text">
+                        <p>"Donut Paket yang bener bener worth banget untuk harga segini dan udah gitu rasanya mwantep poll!"</p>
+                        <div class="testimonial-author">
+                            <span class="testimonial-name">FAQIH</span>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimoni 3 -->
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <img src="m.jpg" alt="Pelanggan 3" class="testimonial-avatar">
+                    <div class="testimonial-text">
+                        <p>"Pengirimannya cepat dan donatnya masih fresh saat sampai."</p>
+                        <div class="testimonial-author">
+                            <span class="testimonial-name">MAULANA</span>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigasi Slider -->
+        <div class="testimonial-nav">
+            <button class="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">Tentang Kami</h2>
             
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tentang Bouquet Elegance">
+                    <img src="ppp.jpg" alt="Tentang BOMBOLONI">
                 </div>
                 
                 <div class="about-text">
-                    <h2>Bouqettea</h2>
-                    <p>Kami adalah bisnis spesialis pembuatan buket untuk berbagai keperluan dan momen spesial. Dengan pengalaman lebih dari 5 tahun, kami telah melayani ribuan pelanggan dengan produk berkualitas tinggi.</p>
-                    <p>Kami menggunakan bahan-bahan terbaik dan desain kreatif untuk menciptakan buket yang indah dan bermakna. Setiap buket dibuat dengan penuh cinta dan perhatian terhadap detail.</p>
-                    <p>Visi kami adalah menjadi penyedia buket terbaik di Indonesia, sementara misi kami adalah memberikan pengalaman berbelanja yang menyenangkan dan produk yang memuaskan untuk setiap pelanggan.</p>
+                    <h2>BOMBOLONI</h2>
+                    <p>Kami menjual banyak varian rasa donut yang unik dan gembul.</p>
+                    <p>Kami menggunakan bahan-bahan terbaik dan desain kreatif untuk menciptakan Donuts yang terbaik.</p>
+                    <p>Visi kami adalah menjadi penyedia donat terbaik di Indonesia, sementara misi kami adalah memberikan pengalaman berbelanja yang menyenangkan dan produk yang memuaskan untuk setiap pelanggan.</p>
                     <a href="#contact" class="btn btn-primary">Hubungi Kami</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Kontak Kami</h2>
@@ -979,23 +255,21 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>Bouqettea</h3>
-                    <p>Spesialis buket bunga, snack, uang, dan boneka untuk setiap momen spesial Anda.</p>
+                    <h3>BOMBOLONI</h3>
+                    <p>Spesialis donat lezat dengan berbagai varian rasa untuk setiap kesempatan.</p>
                     <p>Kualitas terbaik dengan harga terjangkau.</p>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Produk</h3>
                     <ul class="footer-links">
-                        <li><a href="#products" data-filter="bunga">Buket Bunga</a></li>
-                        <li><a href="#products" data-filter="snack">Buket Snack</a></li>
-                        <li><a href="#products" data-filter="uang">Buket Uang</a></li>
-                        <li><a href="#products" data-filter="boneka">Buket Boneka</a></li>
+                        <li><a href="#products" data-filter="DONUTS ORI">Donat Original</a></li>
+                        <li><a href="#products" data-filter="DONUTS RASA">Donat Varian Rasa</a></li>
+                        <li><a href="#products" data-filter="paket">Paket Donat</a></li>
                     </ul>
                 </div>
                 
@@ -1021,11 +295,13 @@
                 </div>
             </div>
             
-            
+            <div class="footer-bottom">
+                <p>&copy; 2023 BOMBOLONI. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Cart Modal -->
+    <!-- Modal windows remain the same -->
     <div class="modal" id="cart-modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1035,7 +311,6 @@
             
             <div class="modal-body">
                 <div class="cart-items" id="cart-items">
-                    <!-- Cart items will be loaded here -->
                     <p class="empty-cart-message">Keranjang belanja Anda kosong.</p>
                 </div>
                 
@@ -1054,7 +329,6 @@
         </div>
     </div>
 
-    <!-- Order Form Modal -->
     <div class="modal" id="order-modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1092,7 +366,6 @@
                     <div class="form-group">
                         <label>Produk yang Dipesan:</label>
                         <div id="order-products">
-                            <!-- Ordered products will be listed here -->
                         </div>
                     </div>
                     
@@ -1104,140 +377,9 @@
         </div>
     </div>
 
+    <script src="p.js"></script>
     <script>
-        // Sample product data
-        const products = [
-            {
-                id: 1,
-                title: "Buket Bunga Mawar Merah",
-                category: "bunga",
-                description: "Buket bunga mawar merah segar dengan packaging eksklusif, cocok untuk anniversary atau ungkapan cinta.",
-                materials: "Bahan: 12 tangkai mawar merah premium, daun eucalyptus, wrapping paper eksklusif, pita satin",
-                price: 250000,
-                image: "bm.webp"
-            },
-            {
-                id: 2,
-                title: "Buket Bunga Campur",
-                category: "bunga",
-                description: "Buket bunga campur segar dengan berbagai jenis bunga yang cantik dan wangi.",
-                materials: "Bahan: Mawar, lily, gerbera, baby's breath, daun eucalyptus, wrapping paper premium",
-                price: 350000,
-                image: "buket 3.webp"
-            },
-            {
-                id: 3,
-                title: "Buket Snack Coklat",
-                category: "snack",
-                description: "Buket snack coklat premium dengan berbagai pilihan coklat terkenal.",
-                materials: "Bahan: Coklat Silverqueen, Cadbury, KitKat, Toblerone, Oreo, wrapping paper eksklusif",
-                price: 180000,
-                image: "bc.jpg"
-            },
-            {
-                id: 4,
-                title: "Buket Snack Korean",
-                category: "snack",
-                description: "Buket snack Korean dengan berbagai makanan ringan populer dari Korea.",
-                materials: "Bahan: Choco pie, Pepero, Orion cake, Korean chips, wrapping paper eksklusif",
-                price: 220000,
-                image: "bk.jpg"
-            },
-            {
-                id: 5,
-                title: "Buket Uang 500 Ribu",
-                category: "uang",
-                description: "Buket uang dengan nominal Rp 500.000 dengan desain mewah dan elegan.",
-                materials: "Bahan: Uang kertas Rp 50.000 (10 lembar), bunga artifisial, wrapping paper premium, aksesoris dekoratif",
-                price: 500000,
-                image: "b5.jpg"
-            },
-            {
-                id: 6,
-                title: "Buket Uang 1 Juta",
-                category: "uang",
-                description: "Buket uang dengan nominal Rp 1.000.000 dengan desain mewah dan elegan.",
-                materials: "Bahan: Uang kertas Rp 50.000 (20 lembar), bunga artifisial premium, wrapping paper eksklusif, aksesoris dekoratif",
-                price: 1000000,
-                image: "b1j.jpg"
-            },
-            {
-                id: 7,
-                title: "Buket Boneka Beruang",
-                category: "boneka",
-                description: "Buket boneka beruang coklat dengan bunga artifisial yang cantik.",
-                materials: "Bahan: Boneka beruang tinggi 30cm, bunga artifisial, wrapping paper premium, pita satin",
-                price: 275000,
-                image: "bb.jpg"
-            },
-            {
-                id: 8,
-                title: "Buket Boneka Kelinci",
-                category: "boneka",
-                description: "Buket boneka kelinci putih dengan bunga artifisial yang lembut.",
-                materials: "Bahan: Boneka kelinci tinggi 25cm, bunga artifisial premium, wrapping paper eksklusif, pita satin",
-                price: 240000,
-                image: "bkk.jpg"
-            },
-            {
-                id: 9,
-                title: "Buket Bunga Tulip",
-                category: "bunga",
-                description: "Buket bunga tulip segar dengan warna-warni yang cerah.",
-                materials: "Bahan: Tulip segar berbagai warna, daun eucalyptus, wrapping paper eksklusif, pita satin",
-                price: 320000,
-                image: "bt.jpg"
-            },
-            {
-                id: 10,
-                title: "Buket Snack Lokal",
-                category: "snack",
-                description: "Buket snack dengan berbagai makanan ringan populer Indonesia.",
-                materials: "Bahan: Chitato, Taro, Beng-Beng, Kopiko, wrapping paper eksklusif",
-                price: 150000,
-                image: "bl.jpg"
-            },
-            {
-                id: 11,
-                title: "Buket Uang 2 Juta",
-                category: "uang",
-                description: "Buket uang dengan nominal Rp 2.000.000 dengan desain mewah dan elegan.",
-                materials: "Bahan: Uang kertas Rp 100.000 (20 lembar), bunga artifisial premium, wrapping paper eksklusif, aksesoris dekoratif",
-                price: 2000000,
-                image: "b2j.jpg"
-            },
-            {
-                id: 12,
-                title: "Buket Boneka Panda",
-                category: "boneka",
-                description: "Buket boneka panda hitam putih dengan bunga artifisial yang menggemaskan.",
-                materials: "Bahan: Boneka panda tinggi 28cm, bunga artifisial premium, wrapping paper eksklusif, pita satin",
-                price: 260000,
-                image: "bp.jpg"
-            }
-        ];
-
-        // Shopping cart
-        let cart = [];
-
-        // DOM Elements
-        const productGrid = document.getElementById('product-grid');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const cartIcon = document.getElementById('cart-icon');
-        const cartCount = document.querySelector('.cart-count');
-        const cartModal = document.getElementById('cart-modal');
-        const cartItems = document.getElementById('cart-items');
-        const cartTotal = document.getElementById('cart-total');
-        const continueShoppingBtn = document.getElementById('continue-shopping');
-        const checkoutBtn = document.getElementById('checkout-btn');
-        const closeModalBtns = document.querySelectorAll('.close-modal');
-        const orderModal = document.getElementById('order-modal');
-        const orderForm = document.getElementById('order-form');
-        const orderProducts = document.getElementById('order-products');
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mainNav = document.getElementById('main-nav');
-
-        // Display products
+        // Update the displayProducts function in your p.js file to include this:
         function displayProducts(filter = 'all') {
             productGrid.innerHTML = '';
             
@@ -1261,8 +403,17 @@
                         <span class="product-category">${getCategoryName(product.category)}</span>
                         <h3 class="product-title">${product.title}</h3>
                         <p class="product-desc">${product.description}</p>
-                        <p class="product-materials">${product.materials}</p>
-                        <p class="product-price">${formatPrice(product.price)}</p>
+                        <div class="product-price-container">
+                            ${product.original_price ? 
+                                `<span class="original-price">${formatPrice(product.original_price)}</span>` : 
+                                ''
+                            }
+                            <span class="current-price">${formatPrice(product.price)}</span>
+                            ${product.original_price ? 
+                                `<span class="discount-badge">Hemat ${formatPrice(product.original_price - product.price)}</span>` : 
+                                ''
+                            }
+                        </div>
                         <div class="product-actions">
                             <button class="btn btn-primary add-to-cart" data-id="${product.id}">Tambah ke Keranjang</button>
                             <button class="btn btn-secondary quick-order" data-id="${product.id}">Pesan Langsung</button>
@@ -1272,379 +423,8 @@
                 productGrid.appendChild(productCard);
             });
             
-            // Add event listeners to the new buttons
-            document.querySelectorAll('.add-to-cart').forEach(btn => {
-                btn.addEventListener('click', addToCart);
-            });
-            
-            document.querySelectorAll('.quick-order').forEach(btn => {
-                btn.addEventListener('click', quickOrder);
-            });
+            // Rest of your event listeners...
         }
-
-        // Get category name for display
-        function getCategoryName(category) {
-            const names = {
-                'bunga': 'Buket Bunga',
-                'snack': 'Buket Snack',
-                'uang': 'Buket Uang',
-                'boneka': 'Buket Boneka'
-            };
-            return names[category] || category;
-        }
-
-        // Format price to IDR
-        function formatPrice(price) {
-            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(price);
-        }
-
-        // Add to cart function
-        function addToCart(e) {
-            const productId = parseInt(e.target.getAttribute('data-id'));
-            const product = products.find(p => p.id === productId);
-            
-            const existingItem = cart.find(item => item.id === productId);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    ...product,
-                    quantity: 1
-                });
-            }
-            
-            updateCart();
-            
-            // Show notification
-            showNotification(`${product.title} telah ditambahkan ke keranjang`);
-        }
-
-        // Quick order function
-        function quickOrder(e) {
-            const productId = parseInt(e.target.getAttribute('data-id'));
-            const product = products.find(p => p.id === productId);
-            
-            // Clear cart and add only this product
-            cart = [{
-                ...product,
-                quantity: 1
-            }];
-            
-            updateCart();
-            openOrderModal();
-        }
-
-        // Update cart UI
-        function updateCart() {
-            // Update cart count
-            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-            cartCount.textContent = totalItems;
-            
-            // Update cart items in modal
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<p class="empty-cart-message">Keranjang belanja Anda kosong.</p>';
-                cartTotal.textContent = 'Rp 0';
-                return;
-            }
-            
-            cartItems.innerHTML = '';
-            let totalPrice = 0;
-            
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                totalPrice += itemTotal;
-                
-                const cartItem = document.createElement('div');
-                cartItem.className = 'cart-item';
-                cartItem.innerHTML = `
-                    <div class="cart-item-img">
-                        <img src="${item.image}" alt="${item.title}">
-                    </div>
-                    <div class="cart-item-details">
-                        <h4 class="cart-item-title">${item.title}</h4>
-                        <p class="cart-item-price">${formatPrice(item.price)}</p>
-                    </div>
-                    <div class="cart-item-quantity">
-                        <button class="quantity-btn minus" data-id="${item.id}">-</button>
-                        <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-id="${item.id}">
-                        <button class="quantity-btn plus" data-id="${item.id}">+</button>
-                        <span class="remove-item" data-id="${item.id}"><i class="fas fa-trash"></i></span>
-                    </div>
-                `;
-                cartItems.appendChild(cartItem);
-            });
-            
-            // Update total
-            cartTotal.textContent = formatPrice(totalPrice);
-            
-            // Add event listeners to quantity buttons
-            document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
-                btn.addEventListener('click', decreaseQuantity);
-            });
-            
-            document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
-                btn.addEventListener('click', increaseQuantity);
-            });
-            
-            document.querySelectorAll('.quantity-input').forEach(input => {
-                input.addEventListener('change', updateQuantity);
-            });
-            
-            document.querySelectorAll('.remove-item').forEach(btn => {
-                btn.addEventListener('click', removeItem);
-            });
-        }
-
-        // Quantity functions
-        function decreaseQuantity(e) {
-            const productId = parseInt(e.target.getAttribute('data-id'));
-            const item = cart.find(item => item.id === productId);
-            
-            if (item.quantity > 1) {
-                item.quantity -= 1;
-                updateCart();
-            }
-        }
-
-        function increaseQuantity(e) {
-            const productId = parseInt(e.target.getAttribute('data-id'));
-            const item = cart.find(item => item.id === productId);
-            
-            item.quantity += 1;
-            updateCart();
-        }
-
-        function updateQuantity(e) {
-            const productId = parseInt(e.target.getAttribute('data-id'));
-            const item = cart.find(item => item.id === productId);
-            const newQuantity = parseInt(e.target.value);
-            
-            if (newQuantity > 0) {
-                item.quantity = newQuantity;
-                updateCart();
-            } else {
-                e.target.value = item.quantity;
-            }
-        }
-
-        function removeItem(e) {
-            const productId = parseInt(e.target.closest('.remove-item').getAttribute('data-id'));
-            cart = cart.filter(item => item.id !== productId);
-            updateCart();
-        }
-
-        // Show notification
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.className = 'notification';
-            notification.textContent = message;
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.classList.add('show');
-            }, 10);
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
-            }, 3000);
-        }
-
-        // Modal functions
-        function openCartModal() {
-            cartModal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function openOrderModal() {
-            // Update order products list
-            orderProducts.innerHTML = '';
-            
-            if (cart.length === 0) return;
-            
-            const list = document.createElement('ul');
-            list.style.listStyle = 'none';
-            list.style.padding = '0';
-            
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.style.marginBottom = '10px';
-                li.style.paddingBottom = '10px';
-                li.style.borderBottom = '1px solid #eee';
-                li.textContent = `${item.title} - ${item.quantity} x ${formatPrice(item.price)}`;
-                list.appendChild(li);
-            });
-            
-            orderProducts.appendChild(list);
-            
-            // Calculate total
-            const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-            const totalEl = document.createElement('p');
-            totalEl.style.marginTop = '10px';
-            totalEl.style.fontWeight = 'bold';
-            totalEl.textContent = `Total: ${formatPrice(totalPrice)}`;
-            orderProducts.appendChild(totalEl);
-            
-            // Open modal
-            cartModal.style.display = 'none';
-            orderModal.style.display = 'block';
-        }
-
-        function closeModal() {
-            cartModal.style.display = 'none';
-            orderModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Filter products
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                displayProducts(filter);
-                
-                // Scroll to products section
-                document.getElementById('products').scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Form submission
-        document.getElementById('message-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Here you would typically send the form data to a server
-            showNotification('Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.');
-            this.reset();
-        });
-
-        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            showNotification('Terima kasih telah berlangganan newsletter kami!');
-            this.reset();
-        });
-
-        orderForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('order-name').value;
-            const phone = document.getElementById('order-phone').value;
-            const purpose = document.getElementById('order-purpose').value;
-            const address = document.getElementById('order-address').value;
-            const note = document.getElementById('order-note').value;
-            
-            // Prepare WhatsApp message
-            let message = `Halo, saya ingin memesan:\n\n`;
-            
-            cart.forEach(item => {
-                message += `- ${item.title} (${item.quantity} x ${formatPrice(item.price)})\n`;
-            });
-            
-            const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-            message += `\nTotal: ${formatPrice(totalPrice)}\n\n`;
-            message += `Atas nama: ${name}\n`;
-            message += `No. HP: ${phone}\n`;
-            message += `Keperluan: ${purpose}\n`;
-            
-            if (address) {
-                message += `Alamat pengiriman: ${address}\n`;
-            }
-            
-            if (note) {
-                message += `Catatan tambahan: ${note}\n`;
-            }
-            
-            // Encode message for URL
-            const encodedMessage = encodeURIComponent(message);
-            
-            // Open WhatsApp
-            window.open(`https://wa.me/6285710785244?text=${encodedMessage}`, '_blank');
-            
-            // Close modal
-            closeModal();
-            
-            // Show notification
-            showNotification('Pesanan Anda telah dikirim via WhatsApp!');
-        });
-
-        // Event listeners
-        cartIcon.addEventListener('click', openCartModal);
-        continueShoppingBtn.addEventListener('click', closeModal);
-        checkoutBtn.addEventListener('click', openOrderModal);
-        
-        closeModalBtns.forEach(btn => {
-            btn.addEventListener('click', closeModal);
-        });
-        
-        window.addEventListener('click', (e) => {
-            if (e.target === cartModal || e.target === orderModal) {
-                closeModal();
-            }
-        });
-
-        // Mobile menu toggle
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    mainNav.classList.remove('active');
-                }
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-
-        // Initialize
-        displayProducts();
-        
-        // Add notification style
-        const style = document.createElement('style');
-        style.textContent = `
-            .notification {
-                position: fixed;
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                background-color: var(--primary);
-                color: white;
-                padding: 15px 25px;
-                border-radius: 5px;
-                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-                z-index: 3000;
-                opacity: 0;
-                transition: opacity 0.3s;
-            }
-            
-            .notification.show {
-                opacity: 1;
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
